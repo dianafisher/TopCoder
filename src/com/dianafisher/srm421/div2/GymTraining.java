@@ -45,19 +45,19 @@ public class GymTraining extends TestCase
         int trainingMinutes = 0;
         while( trainingMinutes < needToTrain )
         {
-            int count = 0;
+//            int count = 0;
             while( (pulse + trainChange) <= maxPulse )
             {
                 pulse += trainChange;
                 trainingMinutes++;
                 totalMinutes++;
-                count++;
+//                count++;
             }
-            System.out.println(String.format("trained %d minutes to reach a pulse of %d", count, pulse));
+//            System.out.println(String.format("trained %d minutes to reach a pulse of %d", count, pulse));
             // how long do we need to rest before we can start training again?
-            System.out.println("trainingMinutes = " + trainingMinutes);
+//            System.out.println("trainingMinutes = " + trainingMinutes);
             if( trainingMinutes == needToTrain ) return totalMinutes;
-            count = 0;
+//            count = 0;
             while( (pulse + trainChange) > maxPulse )
             {
                 pulse -= restChange;
@@ -68,9 +68,9 @@ public class GymTraining extends TestCase
                 }
 //                System.out.println("pulse = " + pulse);
                 totalMinutes++;
-                count++;
+//                count++;
             }
-            System.out.println(String.format("rested %d minutes to reach a pulse of %d", count, pulse));
+//            System.out.println(String.format("rested %d minutes to reach a pulse of %d", count, pulse));
         }
 
         return totalMinutes;
@@ -78,20 +78,20 @@ public class GymTraining extends TestCase
 
     private boolean canTrain( int pulse, int delta, int max )
     {
-        System.out.println("max pulse = " + max);
+//        System.out.println("max pulse = " + max);
         int total = pulse + delta;
-        System.out.println("pulse after training = " + total);
+//        System.out.println("pulse after training = " + total);
         return( pulse + delta <= max );
     }
 
 
     public void test()
     {
-//        assertEquals(10, trainingTime(5, 70, 120, 25, 15));
-//        assertEquals(100, trainingTime(100, 50, 100, 5, 200));
-//        assertEquals(-1, trainingTime(1, 60, 70, 11, 11));
-        assertEquals(3050, trainingTime(200, 50, 200, 150, 1));
-//        assertEquals(40, trainingTime(19, 89, 143, 17, 13));
+        assertEquals(10, trainingTime(5, 70, 120, 25, 15));
+        assertEquals(100, trainingTime(100, 50, 100, 5, 200));
+        assertEquals(-1, trainingTime(1, 60, 70, 11, 11));
+        assertEquals(30050, trainingTime(200, 50, 200, 150, 1));
+        assertEquals(40, trainingTime(19, 89, 143, 17, 13));
     }
 
 }
