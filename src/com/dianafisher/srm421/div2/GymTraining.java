@@ -36,8 +36,40 @@ public class GymTraining extends TestCase
      */
     public int trainingTime(int needToTrain, int minPulse, int maxPulse, int trainChange, int restChange)
     {
+        if( minPulse + trainChange > maxPulse) return -1;
+
+        int pulse = minPulse;
+        int totalMinutes = 0;
+        while( needToTrain > 0 )
+        {
+            totalMinutes++;
+            if( pulse + trainChange <= maxPulse )
+            {
+                pulse += trainChange;
+                needToTrain--;
+            }
+            else
+            {
+                pulse = Math.max( minPulse, pulse - restChange );
+            }
+        }
+        return totalMinutes;
+    }
+
+    public void test()
+    {
+        assertEquals(10, trainingTime(5, 70, 120, 25, 15));
+        assertEquals(109, trainingTime(100, 50, 100, 5, 200));
+        assertEquals(-1, trainingTime(1, 60, 70, 11, 11));
+        assertEquals(30050, trainingTime(200, 50, 200, 150, 1));
+        assertEquals(40, trainingTime(19, 89, 143, 17, 13));
+    }
+
+    // original
+    public int trainingTimeOrg(int needToTrain, int minPulse, int maxPulse, int trainChange, int restChange)
+    {
         // see if we can train for even one minute.  if no, return -1
-        if( !canTrain( minPulse, trainChange, maxPulse) ) return -1;
+        if( minPulse + trainChange > maxPulse) return -1;
 
         // how long can we train before maxing out our pulse?
         int pulse = minPulse;
@@ -65,23 +97,7 @@ public class GymTraining extends TestCase
                 }
             }
         }
-
         return totalMinutes;
-    }
-
-    private boolean canTrain( int pulse, int delta, int max )
-    {
-        return( pulse + delta <= max );
-    }
-
-
-    public void test()
-    {
-        assertEquals(10, trainingTime(5, 70, 120, 25, 15));
-        assertEquals(109, trainingTime(100, 50, 100, 5, 200));
-        assertEquals(-1, trainingTime(1, 60, 70, 11, 11));
-        assertEquals(30050, trainingTime(200, 50, 200, 150, 1));
-        assertEquals(40, trainingTime(19, 89, 143, 17, 13));
     }
 
 }
