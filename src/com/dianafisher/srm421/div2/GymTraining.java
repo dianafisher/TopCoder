@@ -40,40 +40,30 @@ public class GymTraining extends TestCase
         if( !canTrain( minPulse, trainChange, maxPulse) ) return -1;
 
         // how long can we train before maxing out our pulse?
-//        System.out.println("maxPulse = " + maxPulse);
         int pulse = minPulse;
         int totalMinutes = 0;
         int trainingMinutes = 0;
         while( trainingMinutes < needToTrain )
         {
-            int count = 0;
             while( (pulse + trainChange) <= maxPulse )
             {
                 pulse += trainChange;
-//                System.out.println("pulse = " + pulse);
                 trainingMinutes++;
                 totalMinutes++;
-                count++;
             }
-//            System.out.println(String.format("trained %d minutes to reach a pulse of %d", count, pulse));
             // how long do we need to rest before we can start training again?
-//            System.out.println("trainingMinutes = " + trainingMinutes);
             if( trainingMinutes == needToTrain ) return totalMinutes;
-            count = 0;
-//            System.out.println("restChange = " + restChange);
+
             while( (pulse + trainChange) > maxPulse )
             {
                 pulse -= restChange;
                 totalMinutes++;
-                count++;
                 if( pulse < minPulse )
                 {
                     pulse = minPulse;
                     break;
                 }
-//                System.out.println("pulse = " + pulse);
             }
-//            System.out.println(String.format("rested %d minutes to reach a pulse of %d", count, pulse));
         }
 
         return totalMinutes;
