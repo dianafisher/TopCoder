@@ -24,19 +24,18 @@ public class EquilibriumPoints extends TestCase
     public double[] getPoints(int[] x, int[] m)
     {
         int resultSize = x.length - 1;
-
-        Vector<Double> result = new Vector<Double>();
+        double[] result = new double[resultSize];
         for( int i = 0; i < resultSize; i++ )
         {
             double lo = x[i];
             double hi = x[i+1];
             for( int iteration = 0; iteration < 500; iteration++ )
             {
-                System.out.println(String.format("lo at index %d, hi at index %d", i, (i+1) ));
-                System.out.println(String.format("lo = %f, hi = %f", lo, hi));
+//                System.out.println(String.format("lo at index %d, hi at index %d", i, (i+1) ));
+//                System.out.println(String.format("lo = %f, hi = %f", lo, hi));
 
                 double mid = (lo + hi)/2;
-                System.out.println("mid = " + mid);
+//                System.out.println("mid = " + mid);
                 double F = 0;
                 for( int j = 0; j < i+1; j++ )
                 {
@@ -49,18 +48,13 @@ public class EquilibriumPoints extends TestCase
                 }
                 if( F < 0 ) lo = mid;
                 else hi = mid;
-                System.out.println("F = " + F);
             }
-            result.add( ( lo + hi ) / 2);
+
+            double point = (lo + hi)/2;
+//            System.out.println("point = " + point);
+            result[i] = point;
         }
-        double[] r = new double[result.size()];
-        int index = 0;
-        for( Double d : result )
-        {
-            r[index] = d;
-            index++;
-        }
-        return r;
+        return result;
     }
 
     private double getForceOf( double m1, double distance )

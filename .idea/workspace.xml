@@ -68,10 +68,9 @@
       <file leaf-file-name="EquilibriumPoints.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dianafisher/srm421/div2/EquilibriumPoints.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="37" selection-start="2526" selection-end="2526" vertical-scroll-proportion="1.040493">
+            <state line="49" column="30" selection-start="2489" selection-end="2489" vertical-scroll-proportion="0.5921569">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1534#1542#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,8 +95,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="282" />
-    <option name="y" value="43" />
+    <option name="x" value="391" />
+    <option name="y" value="29" />
     <option name="width" value="1528" />
     <option name="height" value="1109" />
   </component>
@@ -378,11 +377,15 @@
       <created>1351214665950</created>
       <updated>1351214665950</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="* Use binary search to find the equilibrium point">
+      <created>1351285834936</created>
+      <updated>1351285834936</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="282" y="43" width="1528" height="1109" extended-state="0" />
+    <frame x="391" y="29" width="1528" height="1109" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -398,8 +401,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16100544" sideWeight="0.618999" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38100103" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16100544" sideWeight="0.55975485" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44024515" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -446,7 +449,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Commit implementation of getPoints()" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Use binary search to find the equilibrium point" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -466,6 +469,7 @@
     <MESSAGE value="* use better algorithm" />
     <MESSAGE value="* Add EquilibriumPoints.java" />
     <MESSAGE value="* Commit implementation of getPoints()" />
+    <MESSAGE value="* Use binary search to find the equilibrium point" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -489,10 +493,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dianafisher/srm421/div2/EquilibriumPoints.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="37" selection-start="2526" selection-end="2526" vertical-scroll-proportion="1.040493">
+        <state line="49" column="30" selection-start="2489" selection-end="2489" vertical-scroll-proportion="0.5921569">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1534#1542#0" expanded="true" />
           </folding>
         </state>
       </provider>
