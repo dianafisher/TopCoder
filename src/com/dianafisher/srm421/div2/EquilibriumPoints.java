@@ -2,6 +2,8 @@ package com.dianafisher.srm421.div2;
 
 import junit.framework.TestCase;
 
+import java.util.Vector;
+
 /**
  *  Problem Statement
      
@@ -22,19 +24,48 @@ public class EquilibriumPoints extends TestCase
     public double[] getPoints(int[] x, int[] m)
     {
         int resultSize = x.length - 1;
-//        System.out.println("resultSize = " + resultSize);
-        double[] result = new double[resultSize];
+
+        Vector<Double> result = new Vector<Double>();
         for( int i = 0; i < resultSize; i++ )
         {
-            int m0 = m[i];
-            int m1 = m[i+1];
-            int x0 = x[i];
-            int x1 = x[i+1];
+            double lo = x[i];
+            double hi = x[i+1];
+            for( int iteration = 0; iteration < 500; iteration++ )
+            {
+                System.out.println(String.format("lo at index %d, hi at index %d", i, (i+1) ));
+                System.out.println(String.format("lo = %f, hi = %f", lo, hi));
 
-            double P = ((( (Math.sqrt(m0) * x1) / Math.sqrt(m1) ) + x0 ) / (1 + (Math.sqrt(m0) / Math.sqrt( m1 ) )));
-            result[i] = P;
+                double mid = (lo + hi)/2;
+                System.out.println("mid = " + mid);
+                double F = 0;
+                for( int j = 0; j < i+1; j++ )
+                {
+//                    System.out.println(String.format("comparing %f with %f", m[j], mid));
+                    F -= getForceOf(m[j], mid - x[j]);
+                }
+                for( int j = i+1; j < x.length; j++ )
+                {
+                    F += getForceOf(m[j], x[j] - mid);
+                }
+                if( F < 0 ) lo = mid;
+                else hi = mid;
+                System.out.println("F = " + F);
+            }
+            result.add( ( lo + hi ) / 2);
         }
-        return result;
+        double[] r = new double[result.size()];
+        int index = 0;
+        for( Double d : result )
+        {
+            r[index] = d;
+            index++;
+        }
+        return r;
+    }
+
+    private double getForceOf( double m1, double distance )
+    {
+        return m1/(distance * distance);
     }
 
     public void test()
@@ -51,20 +82,20 @@ public class EquilibriumPoints extends TestCase
         x = new int[]{1, 2, 3};
         m = new int[]{1, 2, 1};
         expected = new double[] {1.4060952084922507, 2.5939047915077493 };
-//        test(x, m, expected);
+        test(x, m, expected);
 
         x = new int[]{2, 3, 5, 7};
         m = new int[]{3, 2, 7, 5};
         expected = new double[]{2.532859446114924, 3.7271944335152813, 6.099953640852538 };
-        test(x, m, expected);
+//        test(x, m, expected);
 
     }
 
     private void test(int[] x, int[] m, double[] expected)
     {
         double[] calculated = getPoints(x,m);
-        System.out.println("calculated.length = " + calculated.length);
-        System.out.println("expected.length = " + expected.length);
+        assertEquals( expected.length, calculated.length );
+
         for( int i = 0; i < calculated.length; i++)
         {
             assertEquals(expected[i], calculated[i], 0.001);
