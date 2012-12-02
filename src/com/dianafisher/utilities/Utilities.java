@@ -3,6 +3,7 @@ package com.dianafisher.utilities;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,6 +13,17 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class Utilities extends TestCase {
+
+    private static Random random;    // pseudo-random number generator
+    private static long seed;        // pseudo-random number generator seed
+
+    // static initializer
+    static {
+        // this is how the seed was set in Java 1.4
+        seed = System.currentTimeMillis();
+        random = new Random(seed);
+    }
+
 
     // n choose k
     // the number of k-sized subsets which exist in the set n
@@ -43,6 +55,9 @@ public class Utilities extends TestCase {
 
     private static void combinations(ArrayList list, ArrayList prefix, int k)
     {
+//        System.out.println("---------");
+//        System.out.println("incoming list = " + list);
+//        System.out.println("incoming prefix = " + prefix);
         if (list.size() < k) return;
         else if (k == 0) System.out.println(prefix);
         else
@@ -52,9 +67,15 @@ public class Utilities extends TestCase {
                 prefix2.add(prefix.get(i));
 
             prefix2.add(list.get(0));
+
             ArrayList subList = new ArrayList();
             for (int i = 1; i < list.size(); i++)
                 subList.add(list.get(i));
+
+//            System.out.println("prefix = " + prefix);
+//            System.out.println("prefix2 = " + prefix2);
+//            System.out.println("subList = " + subList);
+//            System.out.println("k = " + k);
 
             combinations(subList, prefix2, k-1);
             combinations(subList, prefix, k);
@@ -94,6 +115,88 @@ public class Utilities extends TestCase {
         return result;
     }
 
+    // Linear time algorithm to find the top k elements in an array.
+    public static Comparable[] top_k(Comparable[] a, int k)
+    {
+        if (k < 0 || k >= a.length) {
+            throw new RuntimeException("Selected element out of bounds");
+        }
+        shuffle(a);
+        int lo = 0, hi = a.length - 1;
+        while (hi > lo) {
+            int i = partition(a, lo, hi);
+            if      (i > k) hi = i - 1;
+            else if (i < k) lo = i + 1;
+            else return a;
+        }
+        return a;
+    }
+
+    // partition the subarray a[lo .. hi] by returning an index j
+    // so that a[lo .. j-1] <= a[j] <= a[j+1 .. hi]
+    private static int partition(Comparable[] a, int lo, int hi) {
+        int i = lo;
+        int j = hi + 1;
+        Comparable v = a[lo];
+        while (true) {
+
+            // find item on lo to swap
+            while (less(a[++i], v))
+                if (i == hi) break;
+
+            // find item on hi to swap
+            while (less(v, a[--j]))
+                if (j == lo) break;      // redundant since a[lo] acts as sentinel
+
+            // check if pointers cross
+            if (i >= j) break;
+
+            exch(a, i, j);
+        }
+
+        // put v = a[j] into position
+        exch(a, lo, j);
+
+        // with a[lo .. j-1] <= a[j] <= a[j+1 .. hi]
+        return j;
+    }
+
+    /***********************************************************************
+     *  Helper sorting functions
+     ***********************************************************************/
+
+    // is v < w ?
+    private static boolean less(Comparable v, Comparable w) {
+        return (v.compareTo(w) < 0);
+    }
+
+    // exchange a[i] and a[j]
+    private static void exch(Object[] a, int i, int j) {
+        Object swap = a[i];
+        a[i] = a[j];
+        a[j] = swap;
+    }
+
+    /**
+     * Return an integer uniformly between 0 (inclusive) and N (exclusive).
+     */
+    public static int uniform(int N) {
+        return random.nextInt(N);
+    }
+
+    /**
+     * Rearrange the elements of an array in random order.
+     */
+    public static void shuffle(Object[] a) {
+        int N = a.length;
+        for (int i = 0; i < N; i++) {
+            int r = i + uniform(N-i);     // between i and N-1
+            Object temp = a[i];
+            a[i] = a[r];
+            a[r] = temp;
+        }
+    }
+
     public void test()
     {
 //        assertEquals(120, factorial_iterative(5));
@@ -102,12 +205,18 @@ public class Utilities extends TestCase {
 //        System.out.println("getNumCombinationsWithReplacement(4,2) = " + getNumCombinationsWithReplacement(4, 2));
         int[] A = {1,2,3,4};
         combinationsChooseK(A, 2);
-        System.out.println();
-        combinationsChooseK(A, 3);
-        System.out.println();
-        combinationsChooseK(A, 4);
-        System.out.println();
-        combinationsChooseK(A, 1);
+
+        Integer[] aList = new Integer[]{31, 45, 91, 51, 66, 82, 28, 33, 11, 83, 84, 27, 36};
+
+        Integer[] result = (Integer[])top_k(aList, aList.length - 5);
+        for (int i : result)
+            System.out.println(i);
+//        System.out.println();
+//        combinationsChooseK(A, 3);
+//        System.out.println();
+//        combinationsChooseK(A, 4);
+//        System.out.println();
+//        combinationsChooseK(A, 1);
     }
 }
 
