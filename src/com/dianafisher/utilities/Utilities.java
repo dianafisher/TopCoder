@@ -25,9 +25,40 @@ public class Utilities extends TestCase {
         return numerator / denominator;
     }
 
-    public static ArrayList getCombinations(int[] list, int k)
+    public static void combinationsChooseK(int[] list, int k)
     {
-        return null;
+        int n = list.length;
+        if (k > n) return;
+
+        // put everything in an array list
+        ArrayList a = new ArrayList();
+        for (int i : list)
+        {
+            a.add(i);
+        }
+
+        combinations(a, new ArrayList() , k);
+
+    }
+
+    private static void combinations(ArrayList list, ArrayList prefix, int k)
+    {
+        if (list.size() < k) return;
+        else if (k == 0) System.out.println(prefix);
+        else
+        {
+            ArrayList prefix2 = new ArrayList();
+            for (int i = 0; i < prefix.size(); i++)
+                prefix2.add(prefix.get(i));
+
+            prefix2.add(list.get(0));
+            ArrayList subList = new ArrayList();
+            for (int i = 1; i < list.size(); i++)
+                subList.add(list.get(i));
+
+            combinations(subList, prefix2, k-1);
+            combinations(subList, prefix, k);
+        }
     }
 
     // How many combinations with replacement?
@@ -65,14 +96,18 @@ public class Utilities extends TestCase {
 
     public void test()
     {
-        assertEquals(120, factorial_iterative(5));
-        assertEquals(120, factorial(5));
-        assertEquals(6, getNumCombinations(4, 2));
-        System.out.println("getNumCombinationsWithReplacement(4,2) = " + getNumCombinationsWithReplacement(4, 2));
+//        assertEquals(120, factorial_iterative(5));
+//        assertEquals(120, factorial(5));
+//        assertEquals(6, getNumCombinations(4, 2));
+//        System.out.println("getNumCombinationsWithReplacement(4,2) = " + getNumCombinationsWithReplacement(4, 2));
         int[] A = {1,2,3,4};
-        ArrayList combinations = getCombinations(A, 4);
-
+        combinationsChooseK(A, 2);
+        System.out.println();
+        combinationsChooseK(A, 3);
+        System.out.println();
+        combinationsChooseK(A, 4);
+        System.out.println();
+        combinationsChooseK(A, 1);
     }
-
 }
 
