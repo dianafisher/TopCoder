@@ -57,6 +57,10 @@ public class SimpleHashTable
     private int hash(Object key)
     {
         // & with 0x7fffffff to prevent negative numbers
+//        int code = key.hashCode();
+//        System.out.println("code = " + code);
+//        code = code & 0x7fffffff;
+//        System.out.println("after anding with 0x7fffffff = " + code);
         return (key.hashCode() & 0x7fffffff) % M;
     }
 
@@ -65,9 +69,11 @@ public class SimpleHashTable
         table.put("Hamburger", "Helper");
         table.put("Rodney", "Reindeer");
         table.put("Rodney", "Bearcat");
+        table.put(3, 5);
 
         String result = (String)table.get("Rodney");
         System.out.println("result = " + result);
+        System.out.println(table.get(3));
 
     }
 }
