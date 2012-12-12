@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad0df3a0-8ace-4135-85c4-8b6cd4c5c908" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dianafisher/utilities/TreeTraversal.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dianafisher/utilities/Graph_AdjacencyLists.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/dianafisher/utilities/TreeTraversal.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dianafisher/utilities/SimpleHashTable.java" afterPath="$PROJECT_DIR$/src/com/dianafisher/utilities/SimpleHashTable.java" />
     </list>
     <ignored path="TopCoder.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,20 +85,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleHashTable.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SimpleHashTable.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dianafisher/utilities/SimpleHashTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="24" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.5777778">
+            <state line="62" column="24" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TreeTraversal.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dianafisher/utilities/TreeTraversal.java">
+      <file leaf-file-name="Graph_AdjacencyLists.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/dianafisher/utilities/Graph_AdjacencyLists.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="83" column="0" selection-start="2442" selection-end="2442" vertical-scroll-proportion="0.9977064">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#681#690#0" expanded="true" />
+                <element signature="e#2555#2564#0" expanded="true" />
+                <element signature="e#3093#3102#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,16 +128,18 @@
         <option value="$PROJECT_DIR$/src/com/dianafisher/srm563/div2/FoxAndHandleEasy.java" />
         <option value="$PROJECT_DIR$/src/com/dianafisher/srm563/div1/FoxAndHandle.java" />
         <option value="$PROJECT_DIR$/src/com/dianafisher/srm558/div1/Stamp.java" />
-        <option value="$PROJECT_DIR$/src/com/dianafisher/utilities/TreeTraversal.java" />
         <option value="$PROJECT_DIR$/src/com/dianafisher/utilities/SimpleHashTable.java" />
+        <option value="$PROJECT_DIR$/src/com/dianafisher/utilities/Graph.java" />
+        <option value="$PROJECT_DIR$/src/com/dianafisher/utilities/TreeTraversal.java" />
+        <option value="$PROJECT_DIR$/src/com/dianafisher/utilities/Graph_AdjacencyLists.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="690" />
-    <option name="y" value="71" />
-    <option name="width" value="1753" />
-    <option name="height" value="1338" />
+    <option name="x" value="157" />
+    <option name="y" value="22" />
+    <option name="width" value="1278" />
+    <option name="height" value="817" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -245,29 +252,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
-  <component name="RunManager" selected="Application.SimpleHashTable">
-    <configuration default="false" name="FoxAndHandleEasy" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="TopCoder" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.dianafisher.srm563.div2" />
-      <option name="MAIN_CLASS_NAME" value="com.dianafisher.srm563.div2.FoxAndHandleEasy" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Graph_AdjacencyLists">
     <configuration default="false" name="CoinsGameEasy.test" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="TopCoder" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -336,6 +321,22 @@
     </configuration>
     <configuration default="false" name="SimpleHashTable" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.dianafisher.utilities.SimpleHashTable" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TopCoder" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Graph_AdjacencyLists" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.dianafisher.utilities.Graph_AdjacencyLists" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -468,11 +469,11 @@
       </method>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.FoxAndHandleEasy" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CoinsGameEasy.test" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.FoxAndHandle.test" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.Stamp" />
-      <item index="4" class="java.lang.String" itemvalue="Application.SimpleHashTable" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.CoinsGameEasy.test" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FoxAndHandle.test" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.Stamp" />
+      <item index="3" class="java.lang.String" itemvalue="Application.SimpleHashTable" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Graph_AdjacencyLists" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -520,11 +521,15 @@
       <created>1355189915613</created>
       <updated>1355189915613</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="* See what happens to the hash code if we do not AND it.">
+      <created>1355191225941</created>
+      <updated>1355191225941</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="690" y="71" width="1753" height="1338" extended-state="0" />
+    <frame x="157" y="22" width="1278" height="817" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -535,13 +540,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902297" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16480939" sideWeight="0.57682824" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42317173" sideWeight="0.99883926" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22845529" sideWeight="0.66522986" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3347701" sideWeight="0.99883926" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -586,7 +591,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Add files for srm563 division 1, srm558 division 1 and a simple hashtable implementation." />
+    <option name="LAST_COMMIT_MESSAGE" value="* See what happens to the hash code if we do not AND it." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -603,6 +608,7 @@
     <MESSAGE value="Add Utilities.java which contains helper methods." />
     <MESSAGE value="* Add files for srm563 division 2" />
     <MESSAGE value="* Add files for srm563 division 1, srm558 division 1 and a simple hashtable implementation." />
+    <MESSAGE value="* See what happens to the hash code if we do not AND it." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -668,17 +674,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dianafisher/utilities/TreeTraversal.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dianafisher/utilities/SimpleHashTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+        <state line="62" column="24" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dianafisher/utilities/SimpleHashTable.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dianafisher/utilities/Graph_AdjacencyLists.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="24" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.5777778">
-          <folding />
+        <state line="83" column="0" selection-start="2442" selection-end="2442" vertical-scroll-proportion="0.9977064">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#681#690#0" expanded="true" />
+            <element signature="e#2555#2564#0" expanded="true" />
+            <element signature="e#3093#3102#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
