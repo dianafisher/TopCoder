@@ -2,7 +2,8 @@ package com.dianafisher.srm558.div1;
 
 import junit.framework.TestCase;
 
-import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,96 +17,91 @@ public class Stamp extends TestCase
     public int getMinimumCost(String desiredColor, int stampCost, int pushCost)
     {
         System.out.println("desiredColor = " + desiredColor);
-        int maxL = maximumL(desiredColor);
+        int maxL = maxLength(desiredColor);
         System.out.println("maxL = " + maxL);
+        System.out.println();
         return 0;
     }
 
-    private int maximumL(String desiredColor)
+    private int maxLength(String desiredColor)
     {
-        int count = 0;
-        ArrayList<Integer> redCounts = new ArrayList<Integer>();
-        ArrayList<Integer> greenCounts = new ArrayList<Integer>();
-        ArrayList<Integer> blueCounts = new ArrayList<Integer>();
+        Pattern redPattern = Pattern.compile("([*]*[R]+[*]*)+");
+        Matcher matcher = redPattern.matcher(desiredColor);
 
-        int idx = 0;
+        Pattern greenPattern = Pattern.compile("([*]*[G]+[*]*)+");
+        Matcher greenMatcher = greenPattern.matcher(desiredColor);
 
-        // move idx past any wildcards
-        while (idx < desiredColor.length() && desiredColor.charAt(idx) == '*') {
-            idx++;
-            count++;
+        Pattern bluePattern = Pattern.compile("([*]*[B]+[*]*)+");
+        Matcher blueMatcher = bluePattern.matcher(desiredColor);
+
+        int result = Integer.MAX_VALUE;
+
+        boolean redFound = false;
+        boolean greenFound = false;
+        boolean blueFound = false;
+        while( matcher.find()) {
+
+            System.out.format("redMatcher found the text" +
+                    " \"%s\" starting at " +
+                    "index %d and ending at index %d.%n",
+                    matcher.group(),
+                    matcher.start(),
+                    matcher.end());
+            redFound = true;
+            int length = matcher.end() - matcher.start();
+            if (length < result) result = length;
+            System.out.println("red length = " + length);
         }
-//        System.out.println("first index not * = " + idx);
-//        System.out.println("count = " + count);
-        // check what character we have now
-        if (idx < desiredColor.length())
-        {
-            char current = desiredColor.charAt(idx);
-            while (idx < desiredColor.length())
-            {
-                System.out.println("-----");
-                System.out.println("idx = " + idx);
-                System.out.println("current = " + current);
-                System.out.println("count = " + count);
-                char next = desiredColor.charAt(idx);
-                System.out.println("next = " + next);
-                if (next == current || next == '*')
-                    count++;
-                else
-                {
-                    switch(current)
-                    {
-                        case 'R':
-                            redCounts.add(count);
-                            break;
-                        case 'G':
-                            greenCounts.add(count);
-                            break;
-                        case 'B':
-                            blueCounts.add(count);
-                            break;
-                        default: break;
-                    }
-                    count = 1;
-                    current = next;
-                }
-                idx++;
-            }
+        if (!redFound){
+            System.out.println("No red found");
         }
 
-        // find the smallest count
-        int min = 50;
+        while( greenMatcher.find()) {
 
-        System.out.println("red counts:");
-        for (int c : redCounts)
-        {
-            System.out.print(c + ", ");
-            if (c < min) min = c;
-        }
-        System.out.println();
-        System.out.println("green counts:");
-        for (int c : greenCounts)
-        {
-            System.out.print(c + ", ");
-            if (c < min) min = c;
-        }
-        System.out.println();
-        System.out.println("blue counts:");
-        for (int c : blueCounts)
-        {
-            System.out.print(c + ", ");
-            if (c < min) min = c;
-        }
-        System.out.println();
+            System.out.format("greenMatcher found the text" +
+                    " \"%s\" starting at " +
+                    "index %d and ending at index %d.%n",
+                    greenMatcher.group(),
+                    greenMatcher.start(),
+                    greenMatcher.end());
+            greenFound = true;
+            int length = greenMatcher.end() - greenMatcher.start();
+            if (length < result) result = length;
+            System.out.println("green length = " + length);
 
-//        System.out.println("highest L:" + min);
-        return min;
+        }
+        if (!greenFound){
+            System.out.println("No green found");
+        }
+
+        while(blueMatcher.find()) {
+
+            System.out.format("blueMatcher found the text" +
+                    " \"%s\" starting at " +
+                    "index %d and ending at index %d.%n",
+                    blueMatcher.group(),
+                    blueMatcher.start(),
+                    blueMatcher.end());
+            blueFound = true;
+            int length = blueMatcher.end() - blueMatcher.start();
+            if (length < result) result = length;
+            System.out.println("blue length = " + length);
+
+        }
+        if (!blueFound){
+            System.out.println("No blue found");
+        }
+        return result;
     }
 
     public void test()
     {
-//        getMinimumCost("*R*RG*G*GR*RGG*G*GGR***RR*GG", 7, 1);
+        getMinimumCost("RRGGBB", 1, 1);
+        getMinimumCost("R**GB*", 1, 1);
+        getMinimumCost("BRRB", 2, 7);
         getMinimumCost("R*RR*GG", 10, 58);
+        getMinimumCost("*B**B**B*BB*G*BBB**B**B*", 5, 2);
+        getMinimumCost("*R*RG*G*GR*RGG*G*GGR***RR*GG", 7, 1);
 //        assertEquals(204, getMinimumCost("R*RR*GG", 10, 58));
 //        assertEquals(30, getMinimumCost("*R*RG*G*GR*RGG*G*GGR***RR*GG", 7, 1));
     }

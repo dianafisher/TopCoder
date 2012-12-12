@@ -203,20 +203,24 @@ public class Utilities extends TestCase {
 //        assertEquals(120, factorial(5));
 //        assertEquals(6, getNumCombinations(4, 2));
 //        System.out.println("getNumCombinationsWithReplacement(4,2) = " + getNumCombinationsWithReplacement(4, 2));
-        int[] A = {1,2,3,4};
-        combinationsChooseK(A, 2);
-
-        Integer[] aList = new Integer[]{31, 45, 91, 51, 66, 82, 28, 33, 11, 83, 84, 27, 36};
-
-        Integer[] result = (Integer[])top_k(aList, aList.length - 5);
-        for (int i : result)
-            System.out.println(i);
+//        int[] A = {1,2,3,4};
+//        combinationsChooseK(A, 2);
+//
+//        Integer[] aList = new Integer[]{31, 45, 91, 51, 66, 82, 28, 33, 11, 83, 84, 27, 36};
+//
+//        Integer[] result = (Integer[])top_k(aList, aList.length - 5);
+//        for (int i : result)
+//            System.out.println(i);
 //        System.out.println();
 //        combinationsChooseK(A, 3);
 //        System.out.println();
 //        combinationsChooseK(A, 4);
 //        System.out.println();
 //        combinationsChooseK(A, 1);
+        String s = "12";
+        int val = Character.getNumericValue(s.charAt(1));
+
+        System.out.println("val = " + val);
     }
 }
 
