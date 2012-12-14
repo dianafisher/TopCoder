@@ -2,6 +2,8 @@ package com.dianafisher.srm563.div2;
 
 import junit.framework.TestCase;
 
+import java.awt.*;
+
 /**
  * Created with IntelliJ IDEA.
  * User: dianafisher
@@ -11,120 +13,112 @@ import junit.framework.TestCase;
  */
 public class CoinsGameEasy extends TestCase
 {
+    int n;
+    int m;
+    String[] board;
+    int result;
+
+    class Coin {
+        int x;
+        int y;
+
+        public Coin(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public String toString() {
+            StringBuilder builder = new StringBuilder();
+            builder.append(x).append(",").append(y);
+            return builder.toString();
+        }
+
+    }
+
     // goal is to make exactly one coin fall off the board
     public int minimalSteps(String[] board)
     {
-        // board dimensions?
-        int h = board.length;
-        if (h == 0) return -1;
+        this.board = board;
+        result = 11;
+        n = board.length;
+        m = board[0].length();
+        int count = 0;
 
-        int moveCount = 0;
-        int[] stepsPerDirection = new int[4]; // 0 (left), 1 (right), 2 (up), 3 (down)
-        int w = board[0].length();
-        System.out.println("w = " + w);
-        System.out.println("h = " + h);
-        // where are the coins?
-        for (int i = 0; i < h; i++)
-        {
-            String row = board[i];
-            for (int j = 0; j < w; j++)
-            {
-                char ch = row.charAt(j);
-                if (ch == 'o')
-                {
-                    System.out.println("found coin at " + i + ", " + j);
-                    // find how many steps to move coin off board
-                    int left = j+1;
-                    System.out.println("left steps = " + left);
-                    int possibleLeft = 0;
-                    for (int steps = j; steps > -1; steps--)
-                    {
-                        char next = row.charAt(steps);
-                        System.out.println("next = " + next);
-                        if (next == '#') break;
-                        else possibleLeft+=1;
-                    }
-                    System.out.println("possibleLeft = " + possibleLeft);
-                    System.out.println();
-                    stepsPerDirection[0] = possibleLeft;
-                    int right = w-j;
-                    System.out.println("right steps = " + right);
-                    int possibleRight = 0;
-                    for (int steps = 0; steps < right; steps++)
-                    {
-                        char next = row.charAt(steps);
-                        System.out.println("next = " + next);
-                        if (next == '#') break;
-                        else possibleRight+=1;
-                    }
-                    System.out.println("possibleRight = " + possibleRight);
-                    stepsPerDirection[1] = possibleRight;
-                    System.out.println();
+        // arrays to hold x and y value of each of the two coins
+        Coin[] coins = new Coin[2];
 
-                    int up = i+1;
-                    System.out.println("up = " + up);
-                    int possibleUp = 0;
-                    for (int steps = i; steps > -1; steps--)
-                    {
-                        System.out.println("steps = " + steps);
-                        String row_up = board[steps];
-                        char next = row_up.charAt(j);
-                        System.out.println("next = " + next);
-                        if (next == '#') break;
-                        else possibleUp+=1;
-                    }
-                    System.out.println("possibleUp = " + possibleUp);
-                    stepsPerDirection[2] = possibleUp;
-                    System.out.println();
-
-                    int down = h-i;
-                    System.out.println("down = " + down);
-                    int possibleDown = 0;
-                    for (int steps = 0; steps < right; steps++)
-                    {
-                        String row_down = board[steps];
-                        char next = row_down.charAt(j);
-
-                        System.out.println("next = " + next);
-                        if (next == '#') break;
-                        else possibleDown+=1;
-                    }
-                    System.out.println("possibleDown = " + possibleDown);
-                    stepsPerDirection[3] = possibleDown;
-                    System.out.println();
-
-                    // find the direction with the smallest number of steps
-                    int min = stepsPerDirection[0];
-                    int direction = 0;
-                    for (int n = 1; n < 4; n++)
-                    {
-                        if (stepsPerDirection[n] < min )
-                        {
-                            min = stepsPerDirection[n];
-                            direction = n;
-                        }
-                    }
-                    System.out.println("direction = " + direction);
-                    System.out.println("min = " + min);
-
-                    // move the coin and update the board
-                    switch (direction)
-                    {
-                        case 0: //left
-
-                            break;
-                        case 1: // right
-                            break;
-                        case 2:  // up
-                            break;
-                        case 3: // down
-                            break;
-                    }
+        // figure out where the coins are in the board
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (board[i].charAt(j) == 'o') {
+                    // found a coin
+                    coins[count] = new Coin(i, j);
+                    count++;
                 }
             }
         }
-        return -1;
+        // print where the coins are in the board
+        for (int i = 0; i < 2; i++) {
+            System.out.println(coins[i]);
+        }
+
+        // move coins around board
+        move(coins[0].x, coins[0].y, coins[1].x, coins[1].y, 0);
+        System.out.println("result = " + result);
+        if (result == 11) return -1;
+        return result;
     }
+
+    private int[] deltaX = {1, 0, -1, 0}; // right, down, left, up
+    private int[] deltaY = {0, 1, 0, -1};
+    private final static int NUM_DIRECTIONS = 4;
+
+    private void move(int x1, int y1, int x2, int y2, int numMoves) {
+//        System.out.println("coin 1: " + x1 + "," + y1);
+//        System.out.println("coin 2: " + x2 + "," + y2);
+//        System.out.println();
+
+        if (numMoves > 10) return;
+        if (offBoard(x1, y1) && offBoard(x2, y2)) {
+//            System.out.println("both coins fell off.");
+            return;
+        }
+        if (offBoard(x1, y1) || offBoard(x2, y2)) {
+//            System.out.println("one coin fell off");
+//            System.out.println("numMoves = " + numMoves);
+            result = Math.min(result, numMoves);
+            return;
+        }
+
+        // check each direction
+        for (int i = 0; i < NUM_DIRECTIONS; i++) {
+            int nx1, nx2, ny1, ny2;
+            nx1 = x1 + deltaX[i];
+            ny1 = y1 + deltaY[i];
+            if (!offBoard(nx1, ny1) && board[nx1].charAt(ny1) == '#') {
+                nx1 = x1;
+                ny1 = y1;
+            }
+            nx2 = x2 + deltaX[i];
+            ny2 = y2 + deltaY[i];
+            if (!offBoard(nx2, ny2) && board[nx2].charAt(ny2) == '#') {
+                nx2 = x2;
+                ny2 = y2;
+            }
+
+            move(nx1, ny1, nx2, ny2, numMoves+1);
+
+        }
+    }
+
+    private boolean offBoard(int x, int y) {
+        return x < 0 || x >= n || y < 0 || y >= m;
+    }
+
+    private boolean isObstacle(int x, int y) {
+        return board[x].charAt(y) == '#';
+    }
+
 
     public void test()
     {
@@ -149,15 +143,15 @@ public class CoinsGameEasy extends TestCase
           "###########",
         };
         assertEquals(10, minimalSteps(board5));
-
-        String[] board6 = new String[]{
-          "############",
-          ".........#o#",
-          "############",
-          "..........o#",
-          "############",
-        };
-        assertEquals(-1, minimalSteps(board6));  // need at least 11 steps to win (too many)
+//
+//        String[] board6 = new String[]{
+//          "############",
+//          ".........#o#",
+//          "############",
+//          "..........o#",
+//          "############",
+//        };
+//        assertEquals(-1, minimalSteps(board6));  // need at least 11 steps to win (too many)
     }
 
 }

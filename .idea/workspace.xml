@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad0df3a0-8ace-4135-85c4-8b6cd4c5c908" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dianafisher/utilities/BinarySearchTree.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dianafisher/srm558/div1/Stamp.java" afterPath="$PROJECT_DIR$/src/com/dianafisher/srm558/div1/Stamp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dianafisher/srm563/div2/FoxAndHandleEasy.java" afterPath="$PROJECT_DIR$/src/com/dianafisher/srm563/div2/FoxAndHandleEasy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dianafisher/srm563/div2/CoinsGameEasy.java" afterPath="$PROJECT_DIR$/src/com/dianafisher/srm563/div2/CoinsGameEasy.java" />
     </list>
     <ignored path="TopCoder.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,19 +73,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CoinsGameEasy.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CoinsGameEasy.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dianafisher/srm563/div2/CoinsGameEasy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="45" selection-start="4234" selection-end="4234" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="14" column="34" selection-start="296" selection-end="296" vertical-scroll-proportion="0.09063444">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FoxAndHandleEasy.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FoxAndHandleEasy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dianafisher/srm563/div2/FoxAndHandleEasy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="11" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.72809666">
+            <state line="46" column="11" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#569#577#0" expanded="true" />
@@ -114,7 +114,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/dianafisher/srm562/div2/CucumberMarket.java" />
         <option value="$PROJECT_DIR$/src/com/dianafisher/utilities/CombinationsK.java" />
-        <option value="$PROJECT_DIR$/src/com/dianafisher/srm563/div2/CoinsGameEasy.java" />
         <option value="$PROJECT_DIR$/src/com/dianafisher/srm563/div1/FoxAndHandle.java" />
         <option value="$PROJECT_DIR$/src/com/dianafisher/utilities/SimpleHashTable.java" />
         <option value="$PROJECT_DIR$/src/com/dianafisher/utilities/Graph.java" />
@@ -125,6 +124,7 @@
         <option value="$PROJECT_DIR$/src/com/dianafisher/srm558/div1/Stamp.java" />
         <option value="$PROJECT_DIR$/src/com/dianafisher/utilities/BinarySearchTree.java" />
         <option value="$PROJECT_DIR$/src/com/dianafisher/srm563/div2/FoxAndHandleEasy.java" />
+        <option value="$PROJECT_DIR$/src/com/dianafisher/srm563/div2/CoinsGameEasy.java" />
       </list>
     </option>
   </component>
@@ -332,45 +332,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.FoxAndHandleEasy">
-    <configuration default="false" name="Utilities.test" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="TopCoder" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.dianafisher.utilities" />
-      <option name="MAIN_CLASS_NAME" value="com.dianafisher.utilities.Utilities" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="RegexTestHarness" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.dianafisher.utilities.RegexTestHarness" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="TopCoder" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.CoinsGameEasy">
     <configuration default="false" name="BinarySearchTree" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.dianafisher.utilities.BinarySearchTree" />
       <option name="VM_PARAMETERS" />
@@ -417,6 +379,50 @@
       <option name="MAIN_CLASS_NAME" value="com.dianafisher.srm563.div2.FoxAndHandleEasy" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CoinsGameEasy" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="TopCoder" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.dianafisher.srm563.div2" />
+      <option name="MAIN_CLASS_NAME" value="com.dianafisher.srm563.div2.CoinsGameEasy" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CoinsGameEasy.test" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="TopCoder" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.dianafisher.srm563.div2" />
+      <option name="MAIN_CLASS_NAME" value="com.dianafisher.srm563.div2.CoinsGameEasy" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -549,11 +555,11 @@
       </method>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.Utilities.test" />
-      <item index="1" class="java.lang.String" itemvalue="Application.RegexTestHarness" />
-      <item index="2" class="java.lang.String" itemvalue="Application.BinarySearchTree" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.FoxAndHandle" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.FoxAndHandleEasy" />
+      <item index="0" class="java.lang.String" itemvalue="Application.BinarySearchTree" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FoxAndHandle" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.FoxAndHandleEasy" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CoinsGameEasy" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CoinsGameEasy.test" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -613,7 +619,11 @@
       <created>1355296865019</created>
       <updated>1355296865019</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="* Add new implementation for FoxAndHandleEasy.">
+      <created>1355447996407</created>
+      <updated>1355447996407</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -628,7 +638,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275862" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32722008" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -679,7 +689,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="* Use regular expression library to find max L for Stamp problem." />
+    <option name="LAST_COMMIT_MESSAGE" value="* Add new implementation for FoxAndHandleEasy." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -699,6 +709,7 @@
     <MESSAGE value="* See what happens to the hash code if we do not AND it." />
     <MESSAGE value="* Complete Graph implementation using adjacency lists.&#10;* Add bfs and dfs traversal of graph." />
     <MESSAGE value="* Use regular expression library to find max L for Stamp problem." />
+    <MESSAGE value="* Add new implementation for FoxAndHandleEasy." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -783,19 +794,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dianafisher/srm563/div2/CoinsGameEasy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="45" selection-start="4234" selection-end="4234" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dianafisher/srm563/div2/FoxAndHandleEasy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="11" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.72809666">
+        <state line="46" column="11" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#569#577#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dianafisher/srm563/div2/CoinsGameEasy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="34" selection-start="296" selection-end="296" vertical-scroll-proportion="0.09063444">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
